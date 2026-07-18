@@ -1,0 +1,28 @@
+{
+  "name": "cse341-project2",
+  "version": "1.0.0",
+  "description": "CSE341 Project 2 - REST API with Node.js, MongoDB, Mongoose, and Swagger",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "swagger": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wilfredo-Marapacuto/CSE341-PROJECT2.git"
+  },
+  "author": "Wilfredo Marapacuto",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

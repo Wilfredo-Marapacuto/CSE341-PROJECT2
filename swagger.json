@@ -1,0 +1,371 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "CSE341 Project 2 API",
+    "description": "REST API for managing clients and services",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/clients": {
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Get all clients",
+        "responses": {
+          "200": {
+            "description": "Clients retrieved successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Create a new client",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Client"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Client created successfully"
+          },
+          "400": {
+            "description": "Validation failed"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/clients/{id}": {
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Get a client by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client retrieved successfully"
+          },
+          "400": {
+            "description": "Invalid client ID"
+          },
+          "404": {
+            "description": "Client not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Update a client",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Client"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Client updated successfully"
+          },
+          "400": {
+            "description": "Validation failed or invalid client ID"
+          },
+          "404": {
+            "description": "Client not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Delete a client",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client deleted successfully"
+          },
+          "400": {
+            "description": "Invalid client ID"
+          },
+          "404": {
+            "description": "Client not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/services": {
+      "get": {
+        "tags": [
+          "Services"
+        ],
+        "summary": "Get all services",
+        "responses": {
+          "200": {
+            "description": "Services retrieved successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Services"
+        ],
+        "summary": "Create a new service",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Service"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Service created successfully"
+          },
+          "400": {
+            "description": "Validation failed"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/services/{id}": {
+      "get": {
+        "tags": [
+          "Services"
+        ],
+        "summary": "Get a service by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service retrieved successfully"
+          },
+          "400": {
+            "description": "Invalid service ID"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Services"
+        ],
+        "summary": "Update a service",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Service"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Service updated successfully"
+          },
+          "400": {
+            "description": "Validation failed or invalid service ID"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Services"
+        ],
+        "summary": "Delete a service",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service deleted successfully"
+          },
+          "400": {
+            "description": "Invalid service ID"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Client": {
+      "type": "object",
+      "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state"
+      ],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "Wilfredo"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Marapacuto"
+        },
+        "email": {
+          "type": "string",
+          "example": "wilfredo@example.com"
+        },
+        "phone": {
+          "type": "string",
+          "example": "801-555-1234"
+        },
+        "address": {
+          "type": "string",
+          "example": "123 Main Street"
+        },
+        "city": {
+          "type": "string",
+          "example": "Provo"
+        },
+        "state": {
+          "type": "string",
+          "example": "Utah"
+        }
+      }
+    },
+    "Service": {
+      "type": "object",
+      "required": [
+        "name",
+        "description",
+        "category",
+        "price",
+        "active"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Tax Preparation"
+        },
+        "description": {
+          "type": "string",
+          "example": "Individual income tax preparation service"
+        },
+        "category": {
+          "type": "string",
+          "example": "Tax"
+        },
+        "price": {
+          "type": "number",
+          "example": 150
+        },
+        "active": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    }
+  }
+}

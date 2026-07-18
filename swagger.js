@@ -6,8 +6,8 @@ const doc = {
     description: "REST API for managing clients and services",
     version: "1.0.0",
   },
-  host: "localhost:8080",
-  schemes: ["http"],
+  host: "cse341-project2-ci8r.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger.json";

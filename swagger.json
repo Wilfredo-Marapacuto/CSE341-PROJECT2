@@ -5,10 +5,10 @@
     "description": "REST API for managing clients and services",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-project2-ci8r.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"

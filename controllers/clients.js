@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Client = require("../models/client");
+const Client = require("../models/Client");
 
 const getAllClients = async (req, res) => {
   try {
